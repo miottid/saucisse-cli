@@ -19,31 +19,20 @@ var getRandomColor = function(){
 }
 
 var screen = blessed.screen();
-var background = blessed.box({
-  name: 'BG',
-  top: 'center',
-  left: 'center',
-  width: '100%',
-  height: '100%',
-  bg: 'red',
-  content: 'asdasdasd'
-})
 var frames = blessed.box({
   top: 'center',
   left: 'center',
   width: 33 * 2,
   height: 38
 });
-screen.append(background);
 screen.append(frames);
 screen.render();
 
 
 var renderFrame = function(frame){
   var color = getRandomColor();
-  var rgb = '#' + color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
-
-  background.style.bg = rgb;
+  // var rgb = '#' + color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
+  
   frames.setContent(saucisse.pixelsToASCII(frame, 33, color));
   screen.render();
 }
@@ -54,5 +43,5 @@ saucisse.getPNGsPixels(saucisse.framePaths).then(function(frames){
   setInterval(function(){
     renderFrame(frames[index]);
     index = (index + 1) % 8;
-  }, 700);
+  }, 70);
 });

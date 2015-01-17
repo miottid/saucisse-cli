@@ -12,7 +12,7 @@ var getPNGPixels = function(path){
 };
 
 var framePaths = Array.apply(null, Array(8)).map(function(_, index){
-  return './images/' + index + '.png';
+  return __dirname + '/images/' + index + '.png';
 });
 
 var getPNGsPixels = function(paths){
