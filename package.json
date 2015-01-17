@@ -1,6 +1,6 @@
 {
   "name": "saucisse-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI version of http://saucis.se",
   "main": "index.js",
   "bin": {

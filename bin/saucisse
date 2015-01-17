@@ -6,7 +6,7 @@ var rgb2xterm = require('color2xterm').rgb2xterm;
 var rgb2xterm = require('color2xterm').rgb2xterm;
 // Song
 var Player = require('player');
-var player = new Player('./song.mp3');
+var player = new Player(__dirname + '/song.mp3');
 var play = function(){
   player.play(play);
 };
