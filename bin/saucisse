@@ -3,10 +3,10 @@
 var saucisse = require('../index.js');
 var blessed = require('blessed');
 var rgb2xterm = require('color2xterm').rgb2xterm;
-var rgb2xterm = require('color2xterm').rgb2xterm;
+var path = require('path');
 // Song
 var Player = require('player');
-var player = new Player(__dirname + '/song.mp3');
+var player = new Player(path.join(__dirname, '../song.mp3'));
 var play = function(){
   player.play(play);
 };
@@ -31,8 +31,6 @@ screen.render();
 
 var renderFrame = function(frame){
   var color = getRandomColor();
-  // var rgb = '#' + color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
-  
   frames.setContent(saucisse.pixelsToASCII(frame, 33, color));
   screen.render();
 }
