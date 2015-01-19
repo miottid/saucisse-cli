@@ -43,3 +43,8 @@ saucisse.getPNGsPixels(saucisse.framePaths).then(function(frames){
     index = (index + 1) % 8;
   }, 70);
 });
+
+// Quit on Escape, q, or Control-C.
+screen.key(['escape', 'q', 'C-c', 'C-d'], function(ch, key) {
+  return process.exit(0);
+});
